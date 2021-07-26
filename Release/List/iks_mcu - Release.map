@@ -1,0 +1,346 @@
+###############################################################################
+#
+# IAR ELF Linker V8.30.2.160/W32 for ARM                  26/Jul/2021  13:40:04
+# Copyright 2007-2018 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Exe\iks_mcu
+#        - Release.out
+#    Map file     =  
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\List\iks_mcu
+#        - Release.map
+#    Command line =  
+#        -f C:\Users\Sokolov\AppData\Local\Temp\EWD89A.tmp
+#        (C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\main.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR1986VE1T_IT.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_adc.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_arinc429r.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_arinc429t.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_audio.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_bkp.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_can.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_comp.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_dac.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_dma.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_ebc.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_eeprom.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_eth.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_i2c.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_iwdg.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_keypad.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_led.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_mil_std_1553.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_port.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_power.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_rst_clk.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_ssp.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_timer.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_uart.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_usb.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\MDR32F9Qx_wwdg.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\startup_MDR1986VE1T.o
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj\system_MDR1986VE1T.o
+#        --no_out_extension -o
+#        "C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Exe\iks_mcu
+#        - Release.out" --map
+#        "C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\List\iks_mcu
+#        - Release.map" --config
+#        C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\config\linker\Milandr\MDR1986VE1T\MDR1986VE1T.icf
+#        --entry __iar_program_start --redirect __write=__write_buffered
+#        --inline --no_exceptions --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x1'ffff] { ro };
+define block CSTACK with size = 4K, alignment = 8 { };
+define block HEAP with size = 256, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'7fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+keep { section .intvec };
+
+No sections matched the following patterns:
+
+  rw code                               in "P3"
+  rw section EXECUTABLE_MEMORY_SECTION  in "P3"
+
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                        0xc0
+  .intvec            ro code          0x0    0xc0  startup_MDR1986VE1T.o [1]
+                                   - 0xc0    0xc0
+
+"P1":                                       0x91e
+  .text              ro code         0xc0   0x350  main.o [1]
+  .text              ro code        0x410    0xb0  system_MDR1986VE1T.o [1]
+  .text              ro code        0x4c0   0x160  MDR32F9Qx_port.o [1]
+  .text              ro code        0x620    0x18  MDR32F9Qx_rst_clk.o [1]
+  .text              ro code        0x638    0xd8  MDR32F9Qx_timer.o [1]
+  .text              ro code        0x710   0x10e  MDR1986VE1T_IT.o [1]
+  .text              ro code        0x820    0x5c  ABImemcpy.o [3]
+  .text              ro code        0x87c    0x3c  packbits_init_single.o [3]
+  .text              ro code        0x8b8    0x28  data_init.o [3]
+  .iar.init_table    const          0x8e0    0x10  - Linker created -
+  .text              ro code        0x8f0    0x1e  cmain.o [3]
+  .text              ro code        0x90e     0x8  exit.o [2]
+  .text              ro code        0x918     0xa  cexit.o [3]
+  .text              ro code        0x924     0xc  XXexit.o [3]
+  .text              ro code        0x930    0x10  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x940     0xc  cstartup_M.o [3]
+  .text              ro code        0x94c     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x950     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x954     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x958     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x95c     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x960     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x964     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x968     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x96c     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x970     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x974     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x978     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x97c     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x980     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x984     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x988     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x98c     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x990     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x994     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x998     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x99c     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x9a0     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x9a4     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x9a8     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x9ac     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x9b0     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x9b4     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x9b8     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x9bc     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x9c0     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x9c4     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x9c8     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x9cc     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x9d0     0x4  startup_MDR1986VE1T.o [1]
+  .text              ro code        0x9d4     0x4  startup_MDR1986VE1T.o [1]
+  .rodata            const          0x9d8     0x0  packbits_init_single.o [3]
+  Initializer bytes  const          0x9d8     0x6  <for P2-1>
+                                  - 0x9de   0x91e
+
+"P2", part 1 of 2:                           0x33
+  P2-1                        0x2000'0000    0x33  <Init block>
+    .data            inited   0x2000'0000     0x4  system_MDR1986VE1T.o [1]
+    .bss             inited   0x2000'0004    0x14  main.o [1]
+    .bss             inited   0x2000'0018     0x4  main.o [1]
+    .bss             inited   0x2000'001c     0x4  main.o [1]
+    .bss             inited   0x2000'0020     0x6  main.o [1]
+    .bss             inited   0x2000'0028     0x4  main.o [1]
+    .bss             inited   0x2000'002c     0x4  MDR1986VE1T_IT.o [1]
+    .bss             inited   0x2000'0030     0x2  main.o [1]
+    .bss             inited   0x2000'0032     0x1  main.o [1]
+                            - 0x2000'0033    0x33
+
+"P2", part 2 of 2:                         0x1000
+  CSTACK                      0x2000'0038  0x1000  <Block>
+    CSTACK           uninit   0x2000'0038  0x1000  <Block tail>
+                            - 0x2000'1038  0x1000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+        0x9de     0x1'ffff  0x1'f622
+  0x2000'0033  0x2000'0037       0x5
+  0x2000'1038  0x2000'7fff    0x6fc8
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0x6 (11% of destination):
+                0x9d8   0x6
+    1 destination range, total size 0x33:
+          0x2000'0000  0x33
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+command line/config:
+    -------------------------------------------------
+    Total:
+
+C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj: [1]
+    MDR1986VE1T_IT.o            270                 4
+    MDR32F9Qx_port.o            352
+    MDR32F9Qx_rst_clk.o          24
+    MDR32F9Qx_timer.o           216
+    main.o                      848        6       41
+    startup_MDR1986VE1T.o       348
+    system_MDR1986VE1T.o        176                 4
+    -------------------------------------------------
+    Total:                    2 234        6       49
+
+dl6M_tln.a: [2]
+    exit.o                        8
+    -------------------------------------------------
+    Total:                        8
+
+rt6M_tl.a: [3]
+    ABImemcpy.o                  92
+    XXexit.o                     12
+    cexit.o                      10
+    cmain.o                      30
+    cstartup_M.o                 12
+    data_init.o                  40
+    packbits_init_single.o       60
+    -------------------------------------------------
+    Total:                      256
+
+    Gaps                          6                 2
+    Linker created                        16    4 096
+-----------------------------------------------------
+    Grand Total:              2 504       22    4 147
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base         0x8e0          --   Gb  - Linker created -
+.iar.init_table$$Limit        0x8f0          --   Gb  - Linker created -
+?main                         0x8f1         Code  Gb  cmain.o [3]
+ADC_IRQHandler                0x805    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+ARINC429R_IRQHandler          0x72d    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+ARINC429T1_IRQHandler         0x80d    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+ARINC429T2_IRQHandler         0x80f    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+ARINC429T3_IRQHandler         0x811    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+ARINC429T4_IRQHandler         0x813    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+BKP_IRQHandler                0x815    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+BUSY_IRQHandler               0x72b    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+CAN1_IRQHandler               0x71f    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+CAN2_IRQHandler               0x721    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+CSTACK$$Base            0x2000'0038          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'1038          --   Gb  - Linker created -
+DMA_IRQHandler                0x723    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+ETHERNET_IRQHandler           0x807    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+EXT_INT1_IRQHandler           0x817    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+EXT_INT2_IRQHandler           0x819    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+EXT_INT3_IRQHandler           0x81b    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+EXT_INT4_IRQHandler           0x81d    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+GPIO_Init                     0x17b   0x92  Code  Gb  main.o [1]
+HardFault_Handler             0x713    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+IN_Buf                  0x2000'001c    0x4  Data  Gb  main.o [1]
+IN_Fault1               0x2000'0008    0x4  Data  Gb  main.o [1]
+IN_Fault2               0x2000'0018    0x4  Data  Gb  main.o [1]
+IN_State                0x2000'0004    0x4  Data  Gb  main.o [1]
+LED_State               0x2000'000c    0x4  Data  Gb  main.o [1]
+Led_Pin                       0x33d   0xb0  Code  Gb  main.o [1]
+MIL_STD_1553B1_IRQHandler
+                              0x71d    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+MIL_STD_1553B2_IRQHandler
+                              0x71b    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+NMI_Handler                   0x711    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+PORT_Init                     0x4c1  0x122  Code  Gb  MDR32F9Qx_port.o [1]
+PORT_ReadInputDataBit         0x605    0xe  Code  Gb  MDR32F9Qx_port.o [1]
+PORT_StructInit               0x5e3   0x1a  Code  Gb  MDR32F9Qx_port.o [1]
+PORT_ToggleBit                0x613    0xe  Code  Gb  MDR32F9Qx_port.o [1]
+POWER_IRQHandler              0x72f    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+PendSV_Handler                0x717    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+RST_CLK_PCLKcmd               0x621   0x14  Code  Gb  MDR32F9Qx_rst_clk.o [1]
+Read_Pin                      0x261   0x32  Code  Gb  main.o [1]
+Region$$Table$$Base           0x8e0          --   Gb  - Linker created -
+Region$$Table$$Limit          0x8f0          --   Gb  - Linker created -
+SSP1_IRQHandler               0x729    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+SSP2_IRQHandler               0x80b    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+SSP3_IRQHandler               0x809    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+SVC_Handler                   0x715    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+SWITCH_State            0x2000'0020    0x4  Data  Gb  main.o [1]
+S_cnt                   0x2000'0030    0x2  Data  Gb  main.o [1]
+SysTick_Handler               0x719    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+SystemCoreClock         0x2000'0000    0x4  Data  Gb  system_MDR1986VE1T.o [1]
+SystemCoreClockUpdate         0x411   0x58  Code  Gb  system_MDR1986VE1T.o [1]
+SystemInit                    0x469   0x38  Code  Gb  system_MDR1986VE1T.o [1]
+TIMER_BRGInit                 0x69d   0x58  Code  Gb  MDR32F9Qx_timer.o [1]
+TIMER_ClearFlag               0x683    0x8  Code  Gb  MDR32F9Qx_timer.o [1]
+TIMER_Cmd                     0x66d   0x16  Code  Gb  MDR32F9Qx_timer.o [1]
+TIMER_CntInit                 0x639   0x34  Code  Gb  MDR32F9Qx_timer.o [1]
+TIMER_ITConfig                0x68b   0x12  Code  Gb  MDR32F9Qx_timer.o [1]
+Test_Pin                      0x293   0x58  Code  Gb  main.o [1]
+Test_Pin_Start1               0x2eb    0xe  Code  Gb  main.o [1]
+Test_Pin_Start2               0x307    0xe  Code  Gb  main.o [1]
+Test_Pin_Stop1                0x2f9    0xe  Code  Gb  main.o [1]
+Test_Pin_Stop2                0x319    0xe  Code  Gb  main.o [1]
+Timer1_IRQHandler             0x735   0xa0  Code  Gb  MDR1986VE1T_IT.o [1]
+Timer1_Init                   0x20d   0x54  Code  Gb  main.o [1]
+Timer2_IRQHandler             0x801    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+Timer3_IRQHandler             0x803    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+Timer4_IRQHandler             0x733    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+UART1_IRQHandler              0x725    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+UART2_IRQHandler              0x727    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+WWDG_IRQHandler               0x731    0x2  Code  Gb  MDR1986VE1T_IT.o [1]
+__aeabi_memcpy                0x821         Code  Gb  ABImemcpy.o [3]
+__cmain                       0x8f1         Code  Gb  cmain.o [3]
+__exit                        0x925         Code  Gb  XXexit.o [3]
+__iar_data_init3              0x8b9   0x28  Code  Gb  data_init.o [3]
+__iar_packbits_init_single3
+                              0x87d   0x3c  Code  Gb  packbits_init_single.o [3]
+__iar_program_start           0x941         Code  Gb  cstartup_M.o [3]
+__vector_table                  0x0         Data  Gb  startup_MDR1986VE1T.o [1]
+_call_main                    0x8fd         Code  Gb  cmain.o [3]
+_exit                         0x919         Code  Gb  cexit.o [3]
+_main                         0x90b         Code  Gb  cmain.o [3]
+buf_state               0x2000'0032    0x1  Data  Gb  main.o [1]
+cnt                     0x2000'0014    0x4  Data  Gb  main.o [1]
+cnt_impl                0x2000'0028    0x4  Data  Gb  main.o [1]
+exit                          0x90f    0x8  Code  Gb  exit.o [2]
+main                           0xc1   0xba  Code  Gb  main.o [1]
+spi_data                0x2000'0024    0x2  Data  Gb  main.o [1]
+tmr_led                 0x2000'002c    0x4  Data  Gb  MDR1986VE1T_IT.o [1]
+togle_led               0x2000'0010    0x2  Data  Gb  main.o [1]
+
+
+[1] = C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Release\Obj
+[2] = dl6M_tln.a
+[3] = rt6M_tl.a
+
+  2 504 bytes of readonly  code memory
+     22 bytes of readonly  data memory
+  4 147 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

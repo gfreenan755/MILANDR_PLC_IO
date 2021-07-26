@@ -20,10 +20,10 @@ unsigned char S_LED2;
 unsigned char S_LED3;
 unsigned char S_LED4;
 
-int cnt_impl=0;
-unsigned char buf_state=0;
+int cnt_impl;
+unsigned char buf_state;
 
-uint16_t spi_data = 0;
+uint16_t spi_data;
 
 void main(void)
 {
@@ -36,13 +36,18 @@ void main(void)
     //Инициализируем периферию
     GPIO_Init();
     Timer1_Init();
-    SPI2_Init();
-
+    //SPI2_Init();
+    
+    cnt_impl = 0;
+    buf_state = 0;
+    spi_data = 0;
+    S_cnt = 0;
+    
     // Основной цикл программы
     while(1) {
 
       //Переключение светодиодов по состоянию переключателей SW1, SW2
-        if (!PORT_ReadInputDataBit(SA1_1_GPIO_Port, SA1_1_Pin)){
+        if (! PORT_ReadInputDataBit(SA1_1_GPIO_Port, SA1_1_Pin)){
           PORT_SetBits(MDR_PORTD, PORT_Pin_2);
             SWITCH_State[0] = 1;
             spi_data = 1;
@@ -67,7 +72,7 @@ void main(void)
             spi_data = 0;
         }
         
-        SPI2_TransmitData(spi_data);
+        //SPI2_TransmitData(spi_data);
     
     }
 }
@@ -129,10 +134,10 @@ void Timer1_Init(void){
   timer_settings.TIMER_Prescaler = 3;                                           /*!< Specifies the prescaler value used to divide the TIMER clock.
 	 	 	 	 	 	 	 	   	 	  This parameter can be a number between 0x0000 and 0xFFFF.
 	 	 	 	 	 	 	 	   	 	  CLK = TIMER_CLK/(TIMER_Prescaler + 1) */
-  timer_settings.TIMER_Period = 3599;                                           /*!< Specifies the period value to be loaded into the
+  timer_settings.TIMER_Period = 899;                                           /*!< Specifies the period value to be loaded into the
 										 Auto-Reload Register (ARR) at the next update event.
 										 This parameter must be a number between 0x0000 and 0xFFFFFFFF.  */
-  // 144 МГц / (3+1) = 36 МГц    36 МГц / 3600 = 10 кГц
+  // 144 МГц / (3+1) = 36 МГц    36 МГц / 900 = 40 кГц
   
   timer_settings.TIMER_CounterMode = TIMER_CntMode_ClkFixedDir;
   timer_settings.TIMER_CounterDirection = TIMER_CntDir_Up;

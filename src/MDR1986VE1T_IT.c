@@ -25,6 +25,9 @@ extern unsigned char buf_state;
 
 int tmr_led;
 
+uint8_t FILTER_CONST = 8;
+
+
 /*******************************************************************************
 * Function Name  : NMI_Handler
 * Description    : This function handles NMI exception.
@@ -294,7 +297,7 @@ void Timer1_IRQHandler(void)
     Led_Pin();
     break;
   }
-  if(S_cnt >=20)
+  if(S_cnt >=FILTER_CONST)
     S_cnt=0;
   else
     S_cnt++;

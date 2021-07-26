@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <settings>
     <DebugChecksum>
-        <Checksum>119029585</Checksum>
+        <Checksum>639177214</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -156,7 +156,7 @@
         <ShowTiming>1</ShowTiming>
     </CallStackStripe>
     <DisassembleMode>
-        <mode>0</mode>
+        <mode>3</mode>
     </DisassembleMode>
     <Breakpoints2>
         <Bp0>_ 0 "EMUL_CODE" "{$PROJ_DIR$\src\io_leds.c}.79.11" 0 0 1 "" 0 "" 0</Bp0>
