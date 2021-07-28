@@ -1449,7 +1449,7 @@
                     <item>SWITCH_State</item>
                     <item>cnt_impl</item>
                     <item>FILTER_CONST</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>
