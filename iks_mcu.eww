@@ -1,10 +1,7 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-
+<?xml version="1.0" encoding="UTF-8"?>
 <workspace>
-  <project>
-    <path>$WS_DIR$\..\plc_module_digital_input\iks_mcu.ewp</path>
-  </project>
-  <batchBuild/>
+    <project>
+        <path>$WS_DIR$\iks_mcu.ewp</path>
+    </project>
+    <batchBuild />
 </workspace>
-
-
