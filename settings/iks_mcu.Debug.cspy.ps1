@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.1\common\bin\cspybat" -f "D:\users\Anton\Documents\IAR_projects\plc_module_digital_input\settings\iks_mcu.Debug.general.xcl" --backend -f "D:\users\Anton\Documents\IAR_projects\plc_module_digital_input\settings\iks_mcu.Debug.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.1\common\bin\cspybat" -f "C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\settings\iks_mcu.Debug.general.xcl" --backend -f "C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\settings\iks_mcu.Debug.driver.xcl" 
 }
 else
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.1\common\bin\cspybat" -f "D:\users\Anton\Documents\IAR_projects\plc_module_digital_input\settings\iks_mcu.Debug.general.xcl" --debug_file=$debugfile --backend -f "D:\users\Anton\Documents\IAR_projects\plc_module_digital_input\settings\iks_mcu.Debug.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.1\common\bin\cspybat" -f "C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\settings\iks_mcu.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\settings\iks_mcu.Debug.driver.xcl" 
 }
