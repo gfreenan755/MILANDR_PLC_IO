@@ -51,12 +51,21 @@ uint8_t init_flag;
 
 uint16_t spi_data;
 
+extern ETHERCAT EtherCATDevice;
+
 void main(void)
 {
     SystemCoreClockUpdate();
     // Если частота ядра МК настроена неправильно
     if (SystemCoreClock != 144*1000*1000) {
         while(1) {}
+    }
+    
+    //Инициализируем EtherCAT 
+    if(EtherCAT_Init()){
+      EtherCATDevice.IsInit = true;
+    } else {
+     EtherCATDevice.IsInit = false;
     }
     
     //Инициализируем периферию
@@ -81,13 +90,11 @@ void main(void)
     PORT_ResetBits(PLC_OUTPUT_INIT_Port,PLC_OUTPUT_INIT_Pin);
     }
     Timer1_Init();
-    //SPI2_Init();
     
     // Основной цикл программы
     while(1) {
         
       Switch_indicate();  
-      //SPI2_TransmitData(spi_data);
     
     }
 }
@@ -241,59 +248,6 @@ void Timer1_Init(void){
   
   // Включаем таймер
   TIMER_Cmd(MDR_TIMER1, ENABLE);
-
-}
-
-void SPI2_Init(void){
-
-    // Инициализируем пины SPI2
-    /* Enable peripheral clocks */
-    RST_CLK_PCLKcmd(RST_CLK_PCLK_RST_CLK | PCLK_BIT(MDR_PORTC)
-                    | PCLK_BIT(MDR_PORTC), ENABLE);
-
-    /* Configure SPI pins: CLK, RXD, TXD */
-    PORT_InitTypeDef PORT_InitStructure;
-    PORT_StructInit(&PORT_InitStructure);
-    
-    PORT_InitStructure.PORT_Pin   = PORT_Pin_10;
-    PORT_InitStructure.PORT_OE    = PORT_OE_IN;
-    PORT_InitStructure.PORT_FUNC  = PORT_FUNC_MAIN;
-    PORT_InitStructure.PORT_MODE  = PORT_MODE_DIGITAL;
-    PORT_InitStructure.PORT_SPEED = PORT_SPEED_FAST;
-    PORT_Init(MDR_PORTC, &PORT_InitStructure);
-    
-    PORT_InitStructure.PORT_Pin   = PORT_Pin_9 | PORT_Pin_11;
-    PORT_InitStructure.PORT_OE    = PORT_OE_OUT;
-    PORT_Init(MDR_PORTC, &PORT_InitStructure);
-    
-    PORT_InitStructure.PORT_Pin   = PORT_Pin_12;
-    PORT_InitStructure.PORT_FUNC  = PORT_FUNC_PORT;
-    PORT_Init(MDR_PORTC, &PORT_InitStructure);
-    
-    /* Enable peripheral clocks */
-    RST_CLK_PCLKcmd(RST_CLK_PCLK_RST_CLK | PCLK_BIT(MDR_SSP2), ENABLE);
-
-    /* Reset all SSP settings */
-    SSP_DeInit(MDR_SSP2);
-    SSP_BRGInit(MDR_SSP2, SSP_HCLKdiv1);
-
-    /* SSP MASTER configuration */
-    SSP_InitTypeDef sSSP;
-    SSP_StructInit(&sSSP);
-
-    /* Скорость передачи: 144 / (17 + 1) / 2 = 4 МГц */
-    sSSP.SSP_SCR = 17;
-    sSSP.SSP_CPSDVSR = 2;
-    sSSP.SSP_Mode = SSP_ModeMaster;
-    sSSP.SSP_WordLength = SSP_WordLength16b;
-    sSSP.SSP_SPH = SSP_SPH_1Edge;
-    sSSP.SSP_SPO = SSP_SPO_Low;
-    sSSP.SSP_FRF = SSP_FRF_SPI_Motorola;
-    sSSP.SSP_HardwareFlowControl = SSP_HardwareFlowControl_SSE;
-    SSP_Init(MDR_SSP2, &sSSP);
-
-    /* Enable SSP */
-    SSP_Cmd(MDR_SSP2, ENABLE);
 
 }
 
@@ -481,35 +435,5 @@ void Switch_indicate(){
   PORT_ResetBits(MDR_PORTD, PORT_Pin_1);
   }
  
-}
-
-void SPI2_TransmitData(uint16_t data){
-
-    PORT_ResetBits(MDR_PORTC, PORT_Pin_12);
-    
-    SSP_SendData(MDR_SSP2, data);
-    
-    while (SSP_GetFlagStatus(MDR_SSP2, SSP_FLAG_BSY) == SET) {}
-    PORT_SetBits(MDR_PORTC,PORT_Pin_12);
-
-}
-
-bool SPI2_TransmitReceiveData(uint16_t data){
-
-    PORT_ResetBits(MDR_PORTC, PORT_Pin_12);
-    
-    SSP_SendData(MDR_SSP2, data);
-    
-    while (SSP_GetFlagStatus(MDR_SSP2, SSP_FLAG_BSY) == SET) {}
-    PORT_SetBits(MDR_PORTC,PORT_Pin_12);
-
-    bool ret = false;
-    while (SSP_GetFlagStatus(MDR_SSP2, SSP_FLAG_RNE) == SET) {
-        if (SSP_ReceiveData(MDR_SSP2) == data) {
-            ret = true;
-        }
-    }
-    return ret;
-
 }
 

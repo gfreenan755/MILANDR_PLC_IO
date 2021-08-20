@@ -1,9 +1,9 @@
-"D:\users\Anton\Documents\GitHub\MILANDR_PLC_IO\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_mil_std_1553.c"
+"D:\users\Anton\Documents\GitHub\MILANDR_PLC_IO\src\EtherCAT_driver.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -I
-D:\users\Anton\Documents\GitHub\MILANDR_PLC_IO\MDR32F9Qx_StdPeriph_Driver\src
+D:\users\Anton\Documents\GitHub\MILANDR_PLC_IO\src
 -I
 D:\users\Anton\Documents\GitHub\MILANDR_PLC_IO\src
 -I

@@ -2,13 +2,13 @@
 
 "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.1\arm\bin\armjlink2.dll" 
 
-"C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\Debug\Exe\iks_mcu - Debug.out" 
+"D:\users\Anton\Documents\GitHub\MILANDR_PLC_IO\Debug\Exe\iks_mcu - Debug.out" 
 
 --plugin="C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.1\arm\bin\armbat.dll" 
 
---macro="C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\config\flashloader\Milandr\MDR1986VE1T\Flash_MDR1986VE1T.mac" 
+--macro="D:\users\Anton\Documents\GitHub\MILANDR_PLC_IO\config\flashloader\Milandr\MDR1986VE1T\Flash_MDR1986VE1T.mac" 
 
---flash_loader="C:\Users\Sokolov\Documents\GitHub\BLDC_stand\MILANDR_PLC_IO\config\flashloader\Milandr\MDR1986VE1T\Flash_MDR1986VE1T.board" 
+--flash_loader="D:\users\Anton\Documents\GitHub\MILANDR_PLC_IO\config\flashloader\Milandr\MDR1986VE1T\Flash_MDR1986VE1T.board" 
 
 
 

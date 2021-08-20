@@ -5,7 +5,8 @@
 #include "MDR32F9Qx_port.h"
 #include "MDR32F9Qx_rst_clk.h"
 #include "MDR32F9Qx_timer.h"
-#include "MDR32F9Qx_ssp.h"
+
+#include "EtherCAT_driver.h"
 
 #define SA1_1_Pin PORT_Pin_1
 #define SA1_1_GPIO_Port MDR_PORTC
@@ -66,7 +67,7 @@ void GPIO_Init_GENERAL(void);
 void GPIO_Init_INPUT(void);
 void GPIO_Init_OUTPUT(void);
 void Timer1_Init(void);
-void SPI2_Init(void);
+
 
 // Функции входов
 void Read_Pin(unsigned char *Input);
@@ -86,6 +87,3 @@ void Led_Action(unsigned char *Buf_state,unsigned char *Buf_err );
 void Led_Number(unsigned char Number);
 void Switch_update();
 void Switch_indicate();
-
-void SPI2_TransmitData(uint16_t data);
-bool SPI2_TransmitReceiveData(uint16_t data);

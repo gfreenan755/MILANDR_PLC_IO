@@ -2255,6 +2255,12 @@
     <group>
         <name>src</name>
         <file>
+            <name>$PROJ_DIR$\src\EtherCAT_driver.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\EtherCAT_driver.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\src\main.c</name>
         </file>
         <file>
