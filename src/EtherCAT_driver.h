@@ -5,14 +5,17 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#include "MDR1986VE1T_IT.h"
 #include "MDR32F9Qx_ssp.h"
 #include "MDR32F9Qx_port.h"
 #include "MDR32F9Qx_rst_clk.h"
 
 //------ SPI configuration parameters --------------------------------------------
 
+#define BYTE_NUM 16
+#define ATTEMPTS_NUM 10
 
-#if (!defined BYTE_NUM && !defined CUSTOM)// if BYTE_NUM is not declared in the .ino file 
+#if (!defined BYTE_NUM && !defined CUSTOM)// if BYTE_NUM is not declared in the file 
 #define BYTE_NUM 32                     // set it to the 32+32 byte default 
 #endif                                    // this is for compatibility with old applications 
 
@@ -235,6 +238,11 @@
 
 #define DUMMY_BYTE       0xFF
 
+//---- Other ----------------------------------------------------------------------------------------
+
+#define RESET    true
+#define NO_RESET   false
+
 
 //---- typedef ------------------------------------------------------------------------------------
 
@@ -265,16 +273,6 @@ typedef union
   unsigned char   Byte[4];
 } ULONG;
 
-typedef union
-{
-  bool IsInit;
-  unsigned short ChipID;
-  unsigned short Rev;
-  unsigned short Debug;
-  PROCBUFFER_OUT BufferOut;               // output process data buffer 
-  PROCBUFFER_IN BufferIn;                 // input process data buffer 
-} ETHERCAT;
-
 typedef enum  
 {
   ASYNC,
@@ -282,26 +280,50 @@ typedef enum
   SM_SYNC
 }SyncMode;
 
+typedef enum  
+{
+  INIT,
+  PRE_OP,
+  BOOT,
+  SAFE_OP,
+  OP,
+  UNDEFINED
+}Status;
+
+typedef enum  
+{
+  NOT_INIT,
+  NORMAL_OP,
+  RESET_FAIL,
+  TEST_FAIL,
+  HW_FAIL
+}State;
 
 //-------------------------------------------------------------------------------------------------
+typedef struct
+{
+  State curState;
+  SyncMode Sync;
+  Status slaveStatus;
+  unsigned char ChipID;
+  unsigned char Rev;
+  PROCBUFFER_OUT BufferOut;               // output process data buffer 
+  PROCBUFFER_IN BufferIn;                 // input process data buffer 
+} ETHERCAT;
+//------------------------------------------------------------------------------------------------- 
 
-//----- standard SPI chip select management ------------------------------------------------------
-
-#define SCS_Low_macro     PORT_ResetBits(MDR_PORTC, PORT_Pin_12);
-#define SCS_High_macro    PORT_SetBits(MDR_PORTC, PORT_Pin_12);  
-
-//-------------------------------------------------------------------------------------------------    
+//Parsing func
+Status getStatusEnum(unsigned char input);
 
 // Simple SPI functions
 void SPI_Init(void);
+void CS_Pin_Low(void);
+void CS_Pin_High(void);
 void SPI_TransferTx(unsigned char data);
 void SPI_TransferTxLast(unsigned char data);
 unsigned char SPI_TransferRx(unsigned char data);
 
-//unsigned char EtherCAT_MainTask();               // EtherCAT main task
-// must be called cyclically by the application 
-
-bool EtherCAT_Init();                            // EtherCAT board initialization  
+void EtherCAT_Init(bool resetDevice, ETHERCAT* Device);                         // EtherCAT board initialization
 
 // EtherCAT communication functions
 void SPIWriteRegisterDirect(unsigned short Address, unsigned long DataOut);
@@ -312,3 +334,6 @@ unsigned long SPIReadRegisterIndirect(unsigned short Address, unsigned char Len)
 
 void SPIReadProcRamFifo();    
 void SPIWriteProcRamFifo();  
+
+void EtherCAT_MainTask();                                                       // EtherCAT main task
+                                                                                // must be called cyclically by the application 

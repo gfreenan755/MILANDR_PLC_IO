@@ -2,6 +2,8 @@
 #include "MDR1986VE1T_IT.h"
 #include "main.h"
 
+extern uint32_t us_Tick;
+
 extern unsigned char IN_State[NUMBER_PIN_IN];
 extern unsigned char IN_Fault1[NUMBER_PIN_IN];
 extern unsigned char IN_Fault2[NUMBER_PIN_IN];
@@ -106,6 +108,9 @@ void PendSV_Handler(void)
 *******************************************************************************/
 void SysTick_Handler(void)
 {
+  
+  incTick();
+  
 }
 
 /*******************************************************************************
@@ -661,4 +666,25 @@ void EXT_INT3_IRQHandler(void)
 *******************************************************************************/
 void EXT_INT4_IRQHandler(void)
 {
+}
+
+void incTick(){
+  
+  us_Tick++;
+  
+}
+
+void Delay(uint32_t Delay){
+  
+  if ((us_Tick + Delay) < Delay){
+      us_Tick = 0;
+  }
+  
+  uint32_t tickstart = us_Tick;
+  uint32_t wait = Delay;
+  
+  while((us_Tick - tickstart) < wait)
+  {
+  }
+  
 }

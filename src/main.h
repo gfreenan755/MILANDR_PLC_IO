@@ -2,6 +2,7 @@
 #include <stdbool.h>
 
 #include "system_MDR1986VE1T.h"
+#include "MDR1986VE1T_IT.h"
 #include "MDR32F9Qx_port.h"
 #include "MDR32F9Qx_rst_clk.h"
 #include "MDR32F9Qx_timer.h"
@@ -67,7 +68,6 @@ void GPIO_Init_GENERAL(void);
 void GPIO_Init_INPUT(void);
 void GPIO_Init_OUTPUT(void);
 void Timer1_Init(void);
-
 
 // Функции входов
 void Read_Pin(unsigned char *Input);

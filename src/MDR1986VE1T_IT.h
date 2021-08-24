@@ -1,4 +1,5 @@
 /* This file contains all the functions prototypes for the interrupt. */
+#include "system_MDR1986VE1T.h"
 
 #ifndef __MDR1986VE1T_IT_H
 #define __MDR1986VE1T_IT_H
@@ -38,5 +39,10 @@ void EXT_INT1_IRQHandler(void);
 void EXT_INT2_IRQHandler(void);
 void EXT_INT3_IRQHandler(void);
 void EXT_INT4_IRQHandler(void);
+
+// Функции задержки на системном таймере
+void incTick();
+// Блокирующая функция задержки, Delay - в мс
+void Delay(uint32_t Delay);
 
 #endif /* __MDR1986VE1T_IT_H */
